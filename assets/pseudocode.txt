@@ -1,0 +1,13 @@
+js
+
+
+using date api to pull the info of the date and time
+header display date and time (using dayjs)
+if function to determine what color is going to be gray,red green
+if time > daily planner time tag, gray it out
+else if time === to hour tag, make it red
+time that is after the if function is green
+text can be inputed and saved to local storage using local storage function
+the text will keep on displaying on the daily planner.
+getlocal storage the text so that it can still be visible after refresh
+got to use jquery
