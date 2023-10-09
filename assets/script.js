@@ -11,25 +11,27 @@ $('#currentDay').text(today.format('MMM D, YYYY'));
 const timeBlock = $('.hour');
 const timeNow =(today.format('H'));
 
+console.log(today);
+console.log(timeBlock)
+console.log(timeNow)
 
 
 
 // $(function () { 
 
-$(".saveBtn").on("click", function (event) {
-  const textEl = event.target.parentElement.previousElementSibling.children[1].value;
-  localStorage.setItem(event.target.attributes[1].value, textEl);
-});
 
-  function displayTime(){
-    var today = dayjs();
-    $('#currentDay').text(today.format('MMM D, YYYY'));
-    }
-    setInterval(displayTime,1000);
+
+  // function displayTime(){
+  //   var today = dayjs();
+  //   $('#currentDay').text(today.format('MMM D, YYYY'));
+  //   }
+  //   console.log(today);
+  //   setInterval(displayTime,1000);
 
     $.each(timeBlock, function (i, hour){
-      const hourId = parseInt($(this).attr("id"));
-      if (hourId === timeNow) {
+      var hourId = parseInt($(this).attr("id"));
+      console.log(hourId);
+      if (hourId == timeNow) {
         $(this).next().addClass("present");
     
       }
@@ -39,6 +41,11 @@ $(".saveBtn").on("click", function (event) {
       else if (hourId > timeNow) {
         $(this).next().addClass("future");
       }
+      });
+
+      $(".saveBtn").on("click", function (event) {
+        const textEl = event.target.parentElement.previousElementSibling.children[1].value;
+        localStorage.setItem(event.target.attributes[1].value, textEl);
       });
 
       $(document).ready(function() {
